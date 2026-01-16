@@ -569,39 +569,41 @@
 
                     <!-- Footer Info -->
                     <div class="border-t border-gray-300 pt-8">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-                            <div>
-                                <h5 class="font-bold mb-2 uppercase text-xs">Address</h5>
+                        <div
+                            class="flex flex-row flex-wrap justify-between items-start gap-2 md:grid md:grid-cols-3 md:gap-6 text-[9px] md:text-sm">
+                            <div class="w-auto">
+                                <h5 class="font-bold mb-1 uppercase text-[8px] md:text-xs">Address</h5>
                                 <a href="https://maps.app.goo.gl/o7FyTfWsg78JFjA56" target="_blank"
                                     rel="noopener noreferrer"
-                                    class="flex items-start gap-2 text-xs text-gray-700 hover:text-[#5a7d8d] transition-colors group">
+                                    class="flex items-start gap-1 text-[9px] md:text-xs text-gray-700 hover:text-[#5a7d8d] transition-colors group">
                                     <i
-                                        class="fas fa-map-marker-alt text-red-500 mt-1 group-hover:scale-110 transition-transform"></i>
-                                    <span>Pobočná 1402/9,<br>Praha 4 - Michle</span>
+                                        class="fas fa-map-marker-alt text-red-500 mt-0.5 text-[10px] md:text-sm group-hover:scale-110 transition-transform"></i>
+                                    <span class="leading-tight">Pobočná 1402/9,<br>Praha 4 - Michle</span>
                                 </a>
                             </div>
 
-                            <div>
-                                <h5 class="font-bold mb-2 uppercase text-xs">Social Media</h5>
-                                <div class="flex gap-3">
+                            <div class="w-auto">
+                                <h5 class="font-bold mb-1 uppercase text-[8px] md:text-xs">Social Media</h5>
+                                <div class="flex gap-2 md:gap-3">
                                     <a href="https://www.instagram.com/spa_deluxe_praha?igsh=MTd5cjNkd2d5OW4zMQ=="
                                         target="_blank" class="hover:opacity-80">
-                                        <i class="fab fa-instagram text-2xl"
+                                        <i class="fab fa-instagram text-lg md:text-2xl"
                                             style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
                                     </a>
                                     <a href="https://facebook.com" target="_blank" class="hover:opacity-80">
-                                        <i class="fab fa-facebook text-2xl text-[#1877F2]"></i>
+                                        <i class="fab fa-facebook text-lg md:text-2xl text-[#1877F2]"></i>
                                     </a>
                                 </div>
                             </div>
 
-                            <div>
-                                <h5 class="font-bold mb-2 uppercase text-xs">Contact Us</h5>
-                                <p class="text-xs leading-relaxed">
-                                    <i class="fas fa-envelope text-blue-500"></i> <a href="mailto:info@spadeluxe.cz"
+                            <div class="w-auto">
+                                <h5 class="font-bold mb-1 uppercase text-[8px] md:text-xs">Contact Us</h5>
+                                <p class="text-[9px] md:text-xs leading-tight md:leading-relaxed">
+                                    <i class="fas fa-envelope text-blue-500 text-[10px] md:text-sm"></i> <a
+                                        href="mailto:info@spadeluxe.cz"
                                         class="hover:underline">info@spadeluxe.cz</a><br>
-                                    <i class="fab fa-whatsapp text-green-500"></i> <a href="tel:+420703380013"
-                                        class="hover:underline">+420 703 380 013</a>
+                                    <i class="fab fa-whatsapp text-green-500 text-[10px] md:text-sm"></i> <a
+                                        href="tel:+420703380013" class="hover:underline">+420 703 380 013</a>
                             </div>
                         </div>
 
@@ -761,15 +763,15 @@
     </script>
 
 
-<script>
-    // Contact form success message
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('status') === 'success') {
-        alert('Děkujeme! Vaše zpráva byla úspěšně odeslána. Brzy se vám ozveme.');
-        // Clean URL
-        window.history.replaceState(null, null, window.location.pathname);
-    }
-</script>
+    <script>
+        // Contact form success message
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('status') === 'success') {
+            alert('Děkujeme! Vaše zpráva byla úspěšně odeslána. Brzy se vám ozveme.');
+            // Clean URL
+            window.history.replaceState(null, null, window.location.pathname);
+        }
+    </script>
 
 </body>
 
