@@ -18,12 +18,9 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /www/
-          protocol: sftp    # Changed from default
-          port: 22          # Changed from default
-          # DANGEROUS: Set to true only if you want to delete files on server that are not in git
-          # We keep it false for safety first, or use strict mirroring if preferred.
-          # For this hosting, we want to mirror content but protect subdoms.
-          dangerous-clean-slate: true 
+          protocol: ftp
+          port: 21
+          dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/.github*
