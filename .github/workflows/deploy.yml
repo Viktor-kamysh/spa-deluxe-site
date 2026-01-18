@@ -17,7 +17,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: www/      # Changed: removed leading slash
+          server-dir: spadeluxe.cz/
           protocol: ftp
           port: 21
           dangerous-clean-slate: true
