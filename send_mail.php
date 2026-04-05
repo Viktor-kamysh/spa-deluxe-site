@@ -5,6 +5,25 @@ $to = 'info@spadeluxe.cz'; // Target email
 $subject_prefix = '[WEBSITE INQUIRY]';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // --- SPAM PREVENTION ---
+
+    // Requirement A: Honeypot check — bots fill this hidden field, humans leave it empty
+    if (!empty($_POST['website_url'])) {
+        header("Location: index.html?status=success");
+        exit;
+    }
+
+    // Requirement B: URL filter — block submissions containing links in message or diet_needs fields
+    $raw_message   = isset($_POST['message'])    ? $_POST['message']    : '';
+    $raw_diet      = isset($_POST['diet_needs']) ? $_POST['diet_needs'] : '';
+    $url_pattern   = '/(https?|www\.)/i';
+    if (preg_match($url_pattern, $raw_message) || preg_match($url_pattern, $raw_diet)) {
+        header("Location: index.html?status=success");
+        exit;
+    }
+
+    // --- END SPAM PREVENTION ---
+
     // Collect and sanitize input data
     $name = strip_tags(trim($_POST["fullname"]));
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);

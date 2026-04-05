@@ -620,6 +620,11 @@
                     <h3 class="text-2xl text-white mb-8 font-light italic">Kontaktní formulář</h3>
 
                     <form action="send_mail.php" method="POST" class="space-y-5">
+                        <!-- Anti-spam honeypot: hidden from real users, visible to bots -->
+                        <div style="display: none; visibility: hidden; position: absolute; left: -9999px;">
+                            <label for="website_url">Leave this field empty if you are human:</label>
+                            <input type="text" name="website_url" id="website_url" tabindex="-1" autocomplete="off">
+                        </div>
                         <div>
                             <input type="text" name="fullname" placeholder="Jméno a příjmení" required
                                 class="form-input">
